@@ -1,0 +1,22 @@
+let $VIMHOME = "~/.vim"
+source $VIMHOME/vundle
+source $VIMHOME/vimrc_main
+
+" set foldmethod=syntax
+" set foldlevelstart=1
+" filetype plugin indent on     " required!
+" set number
+" :set shiftwidth=2 softtabstop=2 expandtab
+
+if has('gui_running')
+  source $HOME/.vim/bundle/vim-cobalt2/colors/cobalt2-gui.vim
+  set guifont=Operator\ Mono:h12
+
+  highlight Comment gui=italic
+  highlight Comment cterm=italic
+
+  highlight htmlArg gui=italic
+  highlight htmlArg cterm=italic
+endif
+
+

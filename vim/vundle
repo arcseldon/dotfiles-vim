@@ -1,0 +1,175 @@
+set nocompatible               " be iMproved
+
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" For Ruby / Rails dev
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-rake'
+
+" Buffer explorer
+" ,be to open, q to close, d to delete buffer
+Bundle 'jlanzarotta/bufexplorer'
+
+" Linting support for many languages (conflicts with syntastic)
+" Bundle 'w0rp/ale'
+
+" For general programming support
+Bundle 'sheerun/vim-polyglot'
+
+" JSX (React) Support
+"requires 'pangloss/vim-javascript' - in vim-polyglot
+" Plugin 'mxw/vim-jsx'
+
+" Granular project configuration
+Bundle 'tpope/vim-projectionist'
+
+" Fuzzy finder
+Bundle 'kien/ctrlp.vim'
+Bundle 'kaneshin/ctrlp-git-log'
+
+" File tree
+Bundle 'scrooloose/nerdtree'
+
+" Support Block comments in visual mode with ,cc and ,cu
+Bundle 'scrooloose/nerdcommenter'
+" Bundle 'tpope/vim-commentary'
+
+" better support for ending statements in Ruby/C/Lua/etc
+Bundle 'tpope/vim-endwise'
+
+" status bar support
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
+
+" better support for wrapping things with parens, quotes, braces
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-eunuch'
+
+" better support for traversing through lists using [ and ]
+" ([a ]a), quickfix ([q  ]q), location ([l ]l), tag lists ( [t and ]t).
+Bundle 'tpope/vim-unimpaired'
+
+" align variables and operators.
+Bundle 'godlygeek/tabular'
+
+" HTML support
+Bundle 'tpope/vim-ragtag'
+
+" Multicursor support
+Bundle 'terryma/vim-multiple-cursors'
+
+" Edit quickfix window results
+Bundle 'quickfix-reflector.vim'
+
+" Markdown
+" Relies on tabular, which must be loaded first
+Bundle 'plasticboy/vim-markdown'
+
+" launch build processes and other things in splits or tmux.
+Bundle 'tpope/vim-dispatch'
+
+" Ack (better searching)
+Bundle 'mileszs/ack.vim'
+
+" Sets project root to wherever the root of the repository is.
+Bundle 'airblade/vim-rooter'
+
+" Formatting
+" For JavaScript uses:
+" npm install -g js-beautify
+" npm install -g eslint
+Bundle 'Chiel92/vim-autoformat'
+
+" My custom color scheme
+Bundle 'arcseldon/vim-cobalt2'
+Bundle 'arcseldon/vim-mycontrast'
+
+"My custom elixir unicode replacer
+Bundle 'arcseldon/vim-elixirConceal'
+
+" Currently use this for elixir with credo
+Bundle 'neomake/neomake'
+
+" Snippet support
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+" Bundle 'napcs/my-vim-snippets'
+Bundle 'carlosgaldino/elixir-snippets'
+
+" Tagbar support for showing CTags
+Bundle 'majutsushi/tagbar'
+
+" Database support. Run queries and stuff
+Bundle 'vim-scripts/dbext.vim'
+
+" Support for Go.
+Bundle "fatih/vim-go"
+
+" Syntax checking
+Bundle 'scrooloose/syntastic'
+
+" Tab completion for variables and other things
+" NOT compatible with vim-snipmate
+" Bundle 'ervandew/supertab'
+
+"Easy navigation with ,,
+Bundle 'Lokaltog/vim-easymotion'
+
+" Shows colors in your css
+Bundle 'ap/vim-css-color'
+
+" html and css
+Bundle 'mattn/emmet-vim'
+
+" Elixir support
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'mattreduce/vim-mix'
+
+"Git support
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+
+" Shell support
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-shell'
+
+" Handlebars support
+Bundle 'mustache/vim-mustache-handlebars'
+
+" JavaScript libraries like jquery, etc
+Bundle 'othree/javascript-libraries-syntax.vim'
+
+" Strip whitespace
+Bundle 'itspriddle/vim-stripper'
+
+" Quotes
+Plugin 'kana/vim-textobj-user'
+Plugin 'reedes/vim-textobj-quote'
+
+" Unicode
+Plugin 'chrisbra/unicode.vim'
+
+" vimwiki
+Plugin 'vimwiki/vimwiki'
+
+try
+  source $VIMHOME/vundle_private
+catch
+  " no file.
+endtry
+
+" end
+call vundle#end()            " required

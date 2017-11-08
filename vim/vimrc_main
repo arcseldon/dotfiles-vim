@@ -1,0 +1,528 @@
+" Cross-platform Vim Configuration goes in this file
+"
+" Contents
+" Main configuration
+" Visual Configuration
+" Shortcut Key Configuration
+" Plugin Configuration
+" Private Configuration
+"
+
+" ----------- Main Configuration ----------------------------------
+
+set nocompatible                         "don't need to keep compatibility with Vi
+filetype plugin indent on                "enable detection, plugins and indenting in one step
+syntax on                                "Turn on syntax highlighting
+set encoding=utf-8                       "Force UTF-8 encoding for special characters
+set ruler                                "Turn on the ruler
+set number                               "Show line numbers
+set scrolloff=10                         "Keep 10 lines below cursor always
+set cursorline                           "underline the current line in the file
+set cursorcolumn                         "highlight the current column. Visible in GUI mode only.
+" set colorcolumn=80
+call matchadd('ColorColumn', '\%81v', 100)  " Make the 81st column stand out
+
+" speed up update time eg. for gitgutter
+set updatetime=250
+
+" remember marks and global marks for up to 100 files
+set viminfo='100,f1
+
+set background=dark                      "make vim use colors that look good on a dark background
+
+set showcmd                              "show incomplete cmds down the bottom
+set showmode                             "show current mode down the bottom
+set foldenable                           "enable folding
+set showmatch                            "set show matching parenthesis
+"set virtualedit=all                      "allow the cursor to go in to "invalid" places
+set incsearch                            "find the next match as we type the search
+set hlsearch                             "hilight searches by default
+set ignorecase                           "ignore case when searching
+
+set shiftwidth=2                         "number of spaces to use in each autoindent step
+set tabstop=2                            "two tab spaces
+set softtabstop=2                        "number of spaces to skip or insert when <BS>ing or <Tab>ing
+set expandtab                            "spaces instead of tabs for better cross-editor compatibility
+set smarttab                             "use shiftwidth and softtabstop to insert or delete (on <BS>) blanks
+set shiftround                           "when at 3 spaces, and I hit > ... go to 4, not 5
+set nowrap                               "no wrapping
+
+set backspace=indent,eol,start           "allow backspacing over everything in insert mode
+"set cindent                              "recommended seting for automatic C-style indentation
+set autoindent                           "automatic indentation in non-C files
+"set copyindent                           "copy the previous indentation on autoindenting
+"set smartindent
+
+set noerrorbells                         "don't make noise
+set wildmenu                             "make tab completion act more like bash
+set wildmode=list:longest,list:full      "tab complete to longest common string, like bash
+
+"set mouse-=a                             "disable mouse automatically entering visual mode
+set mouse=a                              "enable mouse automatically entering visual mode
+set hidden                               "allow hiding buffers with unsaved changes
+set cmdheight=2                          "make the command line a little taller to hide 'press enter to viem more' text
+
+set clipboard=unnamed,unnamedplus                    "Use system clipboard by default
+set splitright                           "splits open on the right.
+set splitbelow                           "splits open below existing window..
+
+set exrc                                 "enable per-directory .vimrc files
+set secure                               "disable unsafe stuff from local .vimrc files
+
+set laststatus=2                         "always show status line
+
+" Set up the backup directories to a central place.
+set backupdir=$HOME/tmp/backup//
+set directory=$HOME/tmp/backup//
+
+" ----------- Visual Configuration ----------------------------------
+try
+  colorscheme cobalt2
+catch
+  colorscheme mycontrast
+endtry
+
+set statusline=%f%m%r%h%w[%l][%{&ff}]%y[%p%%][%04l,%04v][%n]
+"              | | | | |  |   |      |  |     |    |     |
+"              | | | | |  |   |      |  |     |    |     + current
+"              | | | | |  |   |      |  |     |    |       buffer
+"              | | | | |  |   |      |  |     |    + current
+"              | | | | |  |   |      |  |     |       column
+"              | | | | |  |   |      |  |     +-- current line
+"              | | | | |  |   |      |  +-- current % into file
+"              | | | | |  |   |      +-- current syntax in
+"              | | | | |  |   |          square brackets
+"              | | | | |  |   +-- current fileformat
+"              | | | | |  +-- number of lines
+"              | | | | +-- preview flag in square brackets
+"              | | | +-- help flag in square brackets
+"              | | +-- readonly flag in square brackets
+"              | +-- rodified flag in square brackets
+"              +-- full path to file in the buffer
+
+" Use a bar-shaped cursor for insert mode, even through tmux.
+if has("gui_running")
+  if exists('$TMUX')
+      let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+      let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  else
+      let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+      let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+endif
+
+" Folding
+autocmd FileType javascript setlocal foldmethod=syntax
+autocmd FileType css setlocal foldmethod=indent shiftwidth=2 tabstop=2
+set foldlevelstart=20                    "start level 20 should result in folds open by default
+
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+" ----------- Shortcut Key Configuration ----------------------------------
+let mapleader = ","                      "remap leader to ',' which is much easier than '\'
+
+"Switch to previous file with ',spacebar'
+nmap <leader><SPACE> <C-^>
+
+" Open Taglist with [,s]
+map <Leader>s :TagbarToggle<CR>
+
+" Use leader x to remove the current line but not erase buffer
+map <Leader>x "_dd
+
+" Use leader l to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Exit insert mode with jk
+imap jk <Esc>
+
+" reload configuration file
+map <Leader>r :so $MYVIMRC<CR>
+
+" ctags
+" map <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --exclude=db/dumps --exclude=tmp --exclude=coverage --exclude=log --exclude=.svn --verbose=yes * <CR>
+map <Leader>ct :!ctags -R --exclude=.git --exclude=db/dumps --exclude=tmp --exclude=coverage --exclude=log --exclude=.svn --verbose=yes * <CR>
+
+" Exit insert mode and save with jj
+imap jj <Esc>:w<CR>
+
+" mapping to make movements operate on 1 screen line in wrap mode
+function! ScreenMovement(movement)
+   if &wrap
+      return "g" . a:movement
+   else
+      return a:movement
+   endif
+endfunction
+onoremap <silent> <expr> j ScreenMovement("j")
+onoremap <silent> <expr> k ScreenMovement("k")
+onoremap <silent> <expr> 0 ScreenMovement("0")
+onoremap <silent> <expr> ^ ScreenMovement("^")
+onoremap <silent> <expr> $ ScreenMovement("$")
+nnoremap <silent> <expr> j ScreenMovement("j")
+nnoremap <silent> <expr> k ScreenMovement("k")
+nnoremap <silent> <expr> 0 ScreenMovement("0")
+nnoremap <silent> <expr> ^ ScreenMovement("^")
+nnoremap <silent> <expr> $ ScreenMovement("$")
+
+
+" Supports copying (yanking) to system clipboard in the terminal
+" Pasting remains as Command P on MAC
+vmap <C-c> "+y
+
+" Navigate tabs
+map <leader>1 :tabp<CR>
+map <leader>2 :tabn<CR>
+
+" Turn text search highlight on/off with F5 key
+map <F5> :set hls!<bar>set hls?<CR>
+
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+" insert blank line above in Normal mode
+nnoremap <leader>O mzO<esc>`z
+
+" insert blank line below in Normal mode
+nnoremap <leader>o mzo<esc>`z
+
+" Sort CSS properties alphabetically
+nnoremap <leader>css :g#\({\n\)\@<=#.,/}/sort<cr>
+
+" -- Number toggling
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <F7> :call NumberToggle()<cr>
+
+" Toggle background color for light and dark.
+function! ColorToggle()
+  if(g:colors_name == "cobalt2")
+    colorscheme mycontrast
+  else
+    colorscheme cobalt2
+  endif
+endfunc
+
+nnoremap <F8> :call ColorToggle()<cr>
+
+" Uncomment here to later ColorColumn colour
+" highlight ColorColumn ctermbg=magenta
+
+" Spell check toggle
+map <leader>sp :setlocal spell! spelllang=en_us<CR>
+
+nmap <leader>msp :mkspell! ~/.vim/spell/en.utf-8.add<CR><CR>
+
+
+" Map windows navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+
+" vsearch.vim
+" Visual mode search
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  " Use this line instead of the above to match matches spanning across lines
+  "let @/ = '\V' . substitute(escape(@@, '\'), '\_s\+', '\\_s\\+', 'g')
+  call histadd('/', substitute(@/, '[?/]', '\="\\%d".char2nr(submatch(0))', 'g'))
+  let @@ = temp
+endfunction
+
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>/<CR>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
+
+
+" ----------- Plugin Configuration ----------------------------------
+
+" Quickfix reflector
+" let g:qf_modifiable = 1
+" let g:qf_join_changes = 0
+" let g:qf_write_changes = 1
+
+" Multicursor keys support
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_key='<leader>m'
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+
+" open ctrlp-git-log (git log)
+map <leader>gl :CtrlPGitLog<CR>
+
+" Easy Motion configuration
+let g:EasyMotion_do_mapping = 1 " Enable default mappings
+
+" ---- NERDTree  configuration
+
+" Open NERDTree with [,d]
+map <Leader>d :NERDTreeToggle<CR>
+
+if has("gui_running")
+  " echo "yes, we have a GUI"
+else
+  autocmd VimEnter * NERDTree
+endif
+
+
+let NERDTreeShowLineNumbers=1
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let g:nerdtree_tabs_focus_on_files=1
+let g:nerdtree_tabs_open_on_console_startup=1
+
+" Refreshes nerdtree to the directory relevant to open buffer
+map <leader>t :NERDTreeFind<cr>
+
+" ----- theme support for vim-airline
+
+let g:airline_theme='behelit'
+let g:airline#extensions#tabline#enabled = 1
+
+let g:airline_right_alt_sep ='◀ '
+let g:airline_right_sep = '◀ '
+let g:airline_left_alt_sep = '▶'
+let g:airline_left_sep = '▶'
+
+" -----  NerdCommenter settings
+
+" When using this just use ,c<spacebar> to comment and uncomment
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+" let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+
+" ----- Emmet VIM settings
+
+" let g:user_emmet_mode='n'    "only enable normal mode functions.
+" let g:user_emmet_mode='inv'  "enable all functions, which is equal to
+let g:user_emmet_mode='a'    "enable all function in all mode.
+
+" Restrict to just following file types
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css,eex EmmetInstall
+
+let g:user_emmet_leader_key='<C-Y>'
+
+" ---- Tag Bar for Elixir
+
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'f:functions',
+        \ 'functions:functions',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 'r:records',
+        \ 't:tests'
+    \ ]
+    \ }
+
+
+" ---- CTRL-P configuration
+
+" Open fuzzy finder with leader,f
+map <Leader>f :CtrlP<CR>
+
+" Fuzzy finder for buffers
+map <Leader>b :CtrlPBuffer<CR>
+
+let g:ctrlp_extensions = ['tag', 'buffertag', 'line', 'funky']
+
+" Exclude files from ctrl-p finder
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/_build/*  " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+
+" ---- ack
+" Open ack and ackg
+map <Leader>A :AckG
+map <Leader>a :Ack
+
+" Allows Ack to search for word under cursor
+" nnoremap <F4> :Ack <C-r>=expand('<cword>')<CR>  <CR>
+" map <leader>q :Ack <C-r>=expand('<cword>')<CR>  <CR>
+
+map <leader>q :execute "Ack -w " . expand("<cword>")<Bar> cw<CR>
+map <F4> :execute "Ack -w --type=" . &filetype . " " . expand("<cword>")<Bar> cw<CR>
+
+
+" Search and replace across files instructions
+" 1. :Ack <search term>
+" 2. :cdo %s/<search term>/<replace term>/gc
+" 3. (If you want to save the changes in all files) :cdo update
+
+
+" ---- Snipmate
+let g:snipMate = {}
+let g:snipMate.snippet_version = 1
+
+" ---- markdown configs
+" let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_level = 1
+
+" ----------- Mustache / Handlebars ---------------------------------
+let g:mustache_abbreviations = 1
+
+" ----------- Syntastic  ---------------------------------
+"  install standard and semistandard npm modules globally
+let g:syntastic_mode_map = { 'mode': 'active' }
+let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_cucumber_args="--profile syntastic"
+let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_javascript_standard_exec = 'semistandard'
+let g:syntastic_html_checkers = ['']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" ----------- Dispatch configs ---------------------------------------
+
+autocmd FileType coffee let b:dispatch = 'coffee -c %'
+autocmd BufEnter *_test.exs let b:dispatch = 'mix test %'
+autocmd BufEnter *.ex let b:dispatch = 'elixir %'
+
+nnoremap <Leader>e :Dispatch<CR>
+
+" ----------- quoting -----------
+augroup textobj_quote
+  autocmd!
+  autocmd FileType markdown call textobj#quote#init()
+  autocmd FileType textile call textobj#quote#init()
+augroup END
+
+" ---------- Go -------
+autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
+
+" ---------- EEX Elixir templates -------
+autocmd BufRead,BufNewFile *.eex set ft=eex.html
+
+" ----------- Launch configs ---------------------------------------
+if has('win32') || has ('win64')
+  let $CLEAR_COMMAND="cls"
+else
+  let $CLEAR_COMMAND="clear"
+endif
+
+autocmd FileType ruby nmap <Leader>g :!"$CLEAR_COMMAND"; ruby "%"<cr>
+autocmd FileType go  nmap <Leader>g :!"$CLEAR_COMMAND"; go run "%"<cr>
+autocmd filetype java nmap <Leader>g :!"$CLEAR_COMMAND"; javac "%" && java "%:r"<cr>
+
+if has('win32') || has ('win64')
+  autocmd FileType html  nmap <Leader>g :silent ! start firefox "%"<cr>
+elseif has('mac')
+  autocmd FileType html  nmap <Leader>g :!open "%"<cr><cr>
+endif
+
+" appears not to work with "standard" js linter for syntastic
+" autocmd FileType javascript  nmap <Leader>g :!"$CLEAR_COMMAND"; node "%"<cr>
+autocmd FileType coffee  nmap <Leader>g :!"$CLEAR_COMMAND"; coffee "%"<cr>
+autocmd FileType markdown  nmap <Leader>g :!mark "%"<cr><cr>
+autocmd FileType groovy  nmap <Leader>g :!"$CLEAR_COMMAND"; groovy "%"<cr>
+autocmd FileType sh  nmap <Leader>g :!"$CLEAR_COMMAND"; sh "%"<cr>
+autocmd FileType python  nmap <Leader>g :!"$CLEAR_COMMAND"; python3 "%"<cr>
+autocmd FileType elixir  nmap <Leader>g :!"$CLEAR_COMMAND"; elixir "%"<cr>
+autocmd FileType elm nmap <Leader>g :!"$CLEAR_COMMAND"; elm make "%" --output "%:t:r.html" && open "%:t:r.html"<cr><cr>
+" Elixir tests should run mix
+autocmd BufEnter *_test.exs nmap <Leader>g :!"$CLEAR_COMMAND"; mix test<cr>
+
+
+" ----------- Digraphs -------
+
+silent! dig -. 8230 "U+2026=… HORIZONTAL ELLIPSIS
+
+" ----------- Private Configuration ----------------------------------
+
+" The following has graduated to vimrc_main
+
+nnoremap <silent> <leader>- :NERDTreeClose<bar>bufdo bd<CR>
+
+" Map ,i to run mix test
+" nnoremap <Leader>i :!mix test<CR>
+autocmd FileType elixir  nmap <Leader>i :!"$CLEAR_COMMAND"; mix test "%"<cr>
+
+" brew install jq
+autocmd FileType json nmap <Leader>j :%!jq '.'<cr>
+
+" copies current directory to clipboard
+noremap <silent> cp :let @+=expand("%:p:h")<CR>
+
+" Bubble single lines
+nmap z<Up> ddkP
+nmap z<Down> ddp
+" Bubble multiple lines
+vmap z<Up> xkP`[V`]
+vmap z<Down> xp`[V`]
+
+map <Leader>z :Autoformat<CR>
+
+" Zoom / Restore window.
+function! s:ZoomToggle() abort
+    if exists('t:zoomed') && t:zoomed
+        execute t:zoom_winrestcmd
+        let t:zoomed = 0
+    else
+        let t:zoom_winrestcmd = winrestcmd()
+        resize
+        vertical resize
+        let t:zoomed = 1
+    endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <silent> <C-w>o :ZoomToggle<CR>
+
+" open and close folds with space bar
+nnoremap <space> za
+vnoremap <space> zf
+
+" execute node for javascrip type
+autocmd FileType javascript  nmap <Leader>g :!"$CLEAR_COMMAND"; node "%"<cr>
+
+" Search and replace for word under cursor
+:nmap <leader>n :s/\(<c-r>=expand("<cword>")<cr>\)/
+:nmap <leader>N :%s/\(<c-r>=expand("<cword>")<cr>\)/
+
+" Get everything else from vimrc_private
+" very local config or experimental
+try
+  source ~/.vim/vimrc_private
+catch
+  " no file.
+endtry
