@@ -94,6 +94,7 @@ Bundle 'Chiel92/vim-autoformat'
 " My custom color scheme
 Bundle 'arcseldon/vim-cobalt2'
 Bundle 'arcseldon/vim-mycontrast'
+Bundle 'morhetz/gruvbox'
 
 "My custom elixir unicode replacer
 Bundle 'arcseldon/vim-elixirConceal'
@@ -137,6 +138,7 @@ Bundle 'mattn/emmet-vim'
 " Elixir support
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'mattreduce/vim-mix'
+Bundle 'slashmili/alchemist.vim'
 
 "Git support
 Bundle 'tpope/vim-fugitive'
