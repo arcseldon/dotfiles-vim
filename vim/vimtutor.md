@@ -1177,6 +1177,18 @@ g,   goes forwards through change list
 Tip: unimpaired plugin
 
 
+## Miscellaneous
+
+To open URL e.g http://www.google.com - put cursor over url and use `gx`
+
+To format a document (eg. markdown) to wrap at 80 chars use:
+
+```
+:set textwidth=80
+gq
+```
+
+
 ## Conclusion
 
 This concludes the Vim Tutor.  It was intended to give a brief overview of
