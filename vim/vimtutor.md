@@ -260,7 +260,13 @@ Tip:  wq! wall qall
 
 Exercise: The ccow jumpedd ovverr thhe mooon
 
-Tip: Spell checking - unimpaired plugin =os [s ]s  z=
+Tip: Spell checking - unimpaired plugin =os 
+
+Use [s and ]s to navigate to previous and next spelling 
+
+Use z= to see options for changing spelling from dictionary
+
+Use zG to add word as spelt correct and remember that decision
 
 
 ## Lesson 1.4: TEXT EDITING - INSERTION
