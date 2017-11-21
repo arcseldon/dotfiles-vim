@@ -960,6 +960,8 @@ to delete the double quotes
 
 ds”
 
+```
+
 It's easiest to explain with examples.  Press `cs"'` inside
 
     "Hello world!"
@@ -1007,7 +1009,6 @@ visual mode) followed by `S<p class="important">`.
     <p class="important">
       <em>Hello</em> world!
 
-```
 
 
 
