@@ -1242,6 +1242,18 @@ To format a document (eg. markdown) to wrap at 80 chars use:
 gq
 ```
 
+To delete everything between quotes "
+
+```
+di"
+```
+
+To delete everything inside and quotes too
+
+```
+da"
+```
+
 
 ## Conclusion
 
