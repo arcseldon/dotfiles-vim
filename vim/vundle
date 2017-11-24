@@ -32,6 +32,8 @@ Bundle 'sheerun/vim-polyglot'
 
 " Granular project configuration
 Bundle 'tpope/vim-projectionist'
+Bundle 'arcseldon/vim-projectionist-elixir'
+
 
 " Fuzzy finder
 Bundle 'kien/ctrlp.vim'

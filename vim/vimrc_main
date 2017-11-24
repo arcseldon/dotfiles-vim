@@ -117,6 +117,7 @@ endif
 " Folding
 autocmd FileType javascript setlocal foldmethod=syntax
 autocmd FileType elixir setlocal foldmethod=syntax
+autocmd FileType ruby setlocal foldmethod=syntax
 autocmd FileType css setlocal foldmethod=indent shiftwidth=2 tabstop=2
 set foldlevelstart=20                    "start level 20 should result in folds open by default
 
@@ -148,6 +149,8 @@ map <Leader>r :so $MYVIMRC<CR>
 " ctags
 " map <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --exclude=db/dumps --exclude=tmp --exclude=coverage --exclude=log --exclude=.svn --verbose=yes * <CR>
 map <Leader>ct :!ctags -R --exclude=.git --exclude=db/dumps --exclude=tmp --exclude=coverage --exclude=log --exclude=.svn --verbose=yes * <CR>
+
+map <Leader>cr :!ctags -R --languages=ruby --exclude=.git --exclude=log . <CR>
 
 " Exit insert mode and save with jj
 imap jj <Esc>:w<CR>
@@ -523,6 +526,17 @@ autocmd FileType javascript  nmap <Leader>g :!"$CLEAR_COMMAND"; node "%"<cr>
 " Search and replace for word under cursor
 :nmap <leader>n :s/\(<c-r>=expand("<cword>")<cr>\)/
 :nmap <leader>N :%s/\(<c-r>=expand("<cword>")<cr>\)/
+
+" map carriage return in normal mode for line below and above
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>k
+
+" show file location in nerdtree
+nmap .d :NERDTreeFind<CR>
+
+" toggles between :set paste and :set nopoaste
+" does not appear to work..
+"set pastetoggle=<F2>
 
 " Get everything else from vimrc_private
 " very local config or experimental
