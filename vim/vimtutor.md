@@ -1026,11 +1026,15 @@ or <C-O> to trigger omni-completion.
 <ctrl>n to then traverse list down
 <ctrl>p to travese list upwards
 
-
 Tip: supertab plugin not compatible with snipmate
 
-youcompleteme is complex - can integrate with eclim (headless eclipse)
+Really useful:
 
+File completion: <C-X><C-F>
+Line completion: <C-X><C-L>
+Omni completion: <C-X><C-O><Paste>
+
+youcompleteme is complex - can integrate with eclim (headless eclipse)
 
 ## Lesson 8.4: CTAG Support
 
