@@ -256,6 +256,13 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+
+" RSpec.vim mappings
+map ,.t :call RunCurrentSpecFile()<CR>
+map ,.s :call RunNearestSpec()<CR>
+map ,.l :call RunLastSpec()<CR>
+map ,.a :call RunAllSpecs()<CR>
+
 " Quickfix reflector
 " let g:qf_modifiable = 1
 " let g:qf_join_changes = 0
@@ -532,7 +539,7 @@ nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>k
 
 " show file location in nerdtree
-nmap .d :NERDTreeFind<CR>
+nmap ,.d :NERDTreeFind<CR>
 
 " toggles between :set paste and :set nopoaste
 " does not appear to work..

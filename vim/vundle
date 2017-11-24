@@ -15,6 +15,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rake'
+Bundle 'thoughtbot/vim-rspec'
 
 " Buffer explorer
 " ,be to open, q to close, d to delete buffer
