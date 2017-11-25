@@ -553,8 +553,9 @@ autocmd FileType javascript  nmap <Leader>g :!"$CLEAR_COMMAND"; node "%"<cr>
 :nmap <leader>N :%s/\(<c-r>=expand("<cword>")<cr>\)/
 
 " map carriage return in normal mode for line below and above
-nmap <S-Enter> O<Esc>j
-nmap <CR> o<Esc>k
+" do NOT use carriage return - that is used by locations list to go to error
+" nmap <CR> o<Esc>k
+nmap <S-Enter> O<Esc>k
 
 " show file location in nerdtree
 nmap ,.d :NERDTreeFind<CR>
