@@ -147,7 +147,7 @@ imap jk <Esc>
 map <Leader>r :so $MYVIMRC<CR>
 
 " ctags
-" map <Leader>ct :!ctags -R --exclude=.git --exclude=node_modules --exclude=db/dumps --exclude=tmp --exclude=coverage --exclude=log --exclude=.svn --verbose=yes * <CR>
+map <Leader>cq :!ctags -R --exclude=.git --exclude=node_modules --exclude=db/dumps --exclude=tmp --exclude=coverage --exclude=log --exclude=.svn --verbose=yes * <CR>
 map <Leader>ct :!ctags -R --exclude=.git --exclude=db/dumps --exclude=tmp --exclude=coverage --exclude=log --exclude=.svn --verbose=yes * <CR>
 
 map <Leader>cr :!ctags -R --languages=ruby --exclude=.git --exclude=log . <CR>
@@ -395,6 +395,13 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 " Open ack and ackg
 map <Leader>A :AckG
 map <Leader>a :Ack
+
+let g:ack_mappings = {
+      \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
+      \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
+
+
+ " --noignore-directory=is:node_modules
 
 " Allows Ack to search for word under cursor
 " nnoremap <F4> :Ack <C-r>=expand('<cword>')<CR>  <CR>

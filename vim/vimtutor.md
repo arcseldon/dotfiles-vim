@@ -1153,6 +1153,12 @@ Search and replace
 2. :cdo %s/<search term>/<replace term>/gc
 3. (If you want to save the changes in all files) :cdo update
 
+:Ack foo
+:cdo s/foo/bar/g | update
+
+Need to apply the `update` command afterwards.
+
+see [vim new cdo command](https://chrisarcand.com/vims-new-cdo-command/)
 
 ## Lesson 8.4: Copy And Paste Registers
 

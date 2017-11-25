@@ -17,6 +17,9 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rake'
 Bundle 'thoughtbot/vim-rspec'
 
+" For Node dve
+Bundle 'moll/vim-node'
+
 " Buffer explorer
 " ,be to open, q to close, d to delete buffer
 Bundle 'jlanzarotta/bufexplorer'
