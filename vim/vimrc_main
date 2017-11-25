@@ -363,7 +363,18 @@ let g:tagbar_type_elixir = {
         \ 'r:records',
         \ 't:tests'
     \ ]
-    \ }
+\ }
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
 
 
 " ---- CTRL-P configuration
