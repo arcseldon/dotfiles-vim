@@ -505,7 +505,7 @@ silent! dig -. 8230 "U+2026=… HORIZONTAL ELLIPSIS
 
 " The following has graduated to vimrc_main
 
-nnoremap <silent> <leader>- :NERDTreeClose<bar>bufdo bd<CR>
+nnoremap <silent> <leader>- :NERDTreeClose<bar>bufdo bd!<CR>
 
 " Map ,i to run mix test
 " nnoremap <Leader>i :!mix test<CR>
