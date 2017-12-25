@@ -213,8 +213,8 @@ nnoremap <F7> :call NumberToggle()<cr>
 " Toggle background color for light and dark.
 function! ColorToggle()
   if(g:colors_name == "cobalt2")
-    " colorscheme mycontrast
-    colorscheme gruvbox
+    colorscheme mycontrast
+    " colorscheme gruvbox
   else
     colorscheme cobalt2
   endif
