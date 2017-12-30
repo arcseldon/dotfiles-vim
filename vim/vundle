@@ -45,6 +45,7 @@ Bundle 'kaneshin/ctrlp-git-log'
 
 " File tree
 Bundle 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Support Block comments in visual mode with ,cc and ,cu
 Bundle 'scrooloose/nerdcommenter'

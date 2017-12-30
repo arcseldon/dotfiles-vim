@@ -300,6 +300,11 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:nerdtree_tabs_open_on_console_startup=1
+let NERDTreeAutoDeleteBuffer = 1
+
+" Experimental workflow - see if you like this option or not
+" automatically closes nerd tree when opening a file
+let NERDTreeQuitOnOpen = 1
 
 " Refreshes nerdtree to the directory relevant to open buffer
 map <leader>t :NERDTreeFind<cr>
@@ -512,6 +517,7 @@ nnoremap <silent> <leader>- :NERDTreeClose<bar>bufdo bd!<CR>
 autocmd FileType elixir  nmap <Leader>i :!"$CLEAR_COMMAND"; mix test "%"<cr>
 
 " brew install jq
+" format json
 autocmd FileType json nmap <Leader>j :%!jq '.'<cr>
 
 " copies current directory to clipboard
