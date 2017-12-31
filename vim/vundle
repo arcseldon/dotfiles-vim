@@ -115,7 +115,10 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 " Bundle 'napcs/my-vim-snippets'
-Bundle 'carlosgaldino/elixir-snippets'
+
+" Temporarily commenting out this
+" Conflicts with vim-snippets
+" Bundle 'carlosgaldino/elixir-snippets'
 
 " Tagbar support for showing CTags
 Bundle 'majutsushi/tagbar'
