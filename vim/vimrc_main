@@ -303,6 +303,9 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeAutoDeleteBuffer = 1
 
+" Increase default width of nerdtree window from 31px to 40px
+:let g:NERDTreeWinSize=40
+
 " Experimental workflow - see if you like this option or not
 " automatically closes nerd tree when opening a file
 let NERDTreeQuitOnOpen = 1
