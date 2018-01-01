@@ -71,6 +71,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'godlygeek/tabular'
 
 " HTML support
+" supports ctrl x commands
 Bundle 'tpope/vim-ragtag'
 
 " Multicursor support
@@ -146,7 +147,8 @@ Bundle 'ap/vim-css-color'
 Bundle 'mattn/emmet-vim'
 
 " Elixir support
-Bundle 'elixir-lang/vim-elixir'
+" Bundle 'elixir-lang/vim-elixir'
+Plugin 'elixir-editors/vim-elixir'
 Bundle 'mattreduce/vim-mix'
 Bundle 'slashmili/alchemist.vim'
 
