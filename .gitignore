@@ -3,3 +3,5 @@ vim/.DS_Store
 vim/.netrwhist
 vim/vimrc_private
 vim/vundle_private
+vim/eclim
+vim/plugin

@@ -115,6 +115,7 @@ if has("gui_running")
 endif
 
 " Folding
+autocmd FileType java setlocal foldmethod=syntax
 autocmd FileType javascript setlocal foldmethod=syntax
 autocmd FileType elixir setlocal foldmethod=syntax
 autocmd FileType ruby setlocal foldmethod=syntax
