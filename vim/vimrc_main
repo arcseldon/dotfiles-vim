@@ -398,7 +398,14 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'line', 'funky']
 
 " Exclude files from ctrl-p finder
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/_build/*  " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+" let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+
+" Experimental - check if custom ignore helps
+" use :echo g:ctrlp_custom_ignore to debug what is set
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|target$\|node_modules$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
 
 " ---- ack
 " Open ack and ackg
@@ -445,6 +452,14 @@ let g:syntastic_cucumber_args="--profile syntastic"
 let g:syntastic_javascript_checkers = ['standard']
 let g:syntastic_javascript_standard_exec = 'semistandard'
 let g:syntastic_html_checkers = ['']
+
+" automatically run semistandard fix and load changes to file into buffer
+function! AutoLintFix()
+  :silent !semistandard --fix %
+  set autoread
+endfunc
+
+nnoremap <Leader>p :call AutoLintFix()<cr>
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -506,6 +521,19 @@ autocmd FileType elm nmap <Leader>g :!"$CLEAR_COMMAND"; elm make "%" --output "%
 autocmd BufEnter *_test.exs nmap <Leader>g :!"$CLEAR_COMMAND"; mix test<cr>
 
 
+" ----------- Autoformat -------
+
+" autoformat
+map <Leader>z :Autoformat<CR>
+
+" enable this when you want to check - otherwise disable
+" let g:autoformat_verbosemode=1
+
+" setup custom formatter for semistandard
+let g:formatdef_semistandard_javascript = '"semistandard --fix --stdin"'
+let g:formatters_javascript = ['semistandard_javascript']
+
+
 " ----------- Digraphs -------
 
 silent! dig -. 8230 "U+2026=… HORIZONTAL ELLIPSIS
@@ -533,8 +561,6 @@ nmap z<Down> ddp
 " Bubble multiple lines
 vmap z<Up> xkP`[V`]
 vmap z<Down> xp`[V`]
-
-map <Leader>z :Autoformat<CR>
 
 " Zoom / Restore window.
 function! s:ZoomToggle() abort
