@@ -540,6 +540,10 @@ let g:autoformat_remove_trailing_spaces = 0
 let g:formatdef_semistandard_javascript = '"semistandard --fix --stdin"'
 let g:formatters_javascript = ['semistandard_javascript']
 
+" setup custom formatter for elixir - mix format - NOT WORKING
+" raised issue - https://github.com/Chiel92/vim-autoformat/issues/221
+" let g:formatdef_mixformat_ex = '"mix format"'
+" let g:formatters_ex = ['mixformat_ex']
 
 " ----------- Digraphs -------
 
@@ -554,6 +558,10 @@ nnoremap <silent> <leader>- :NERDTreeClose<bar>bufdo bd!<CR>
 " Map ,i to run mix test
 " nnoremap <Leader>i :!mix test<CR>
 autocmd FileType elixir  nmap <Leader>i :!"$CLEAR_COMMAND"; mix test "%"<cr>
+
+" autoformat elixir code using mix format - vim-autoformat does not
+" current support elixir
+autocmd FileType elixir  nmap <Leader>p :!"$CLEAR_COMMAND"; mix format "%"<cr>
 
 " brew install jq
 " format json
