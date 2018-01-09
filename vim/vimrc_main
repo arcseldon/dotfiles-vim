@@ -456,6 +456,7 @@ let g:syntastic_html_checkers = ['']
 " keep some globals quiet
 let g:syntastic_javascript_standard_quiet_messages = { 'regex': ['alert',
                                             \ 'localStorage',
+                                            \ '\$',
                                             \ 'auth0js',
                                             \ 'auth0'] }
 
@@ -465,6 +466,7 @@ function! AutoLintFix()
   :silent !semistandard --global localStorage
       \ --global alert
       \ --global auth0js
+      \ --global $
       \ --global auth0 --fix %
   set autoread
 endfunc
