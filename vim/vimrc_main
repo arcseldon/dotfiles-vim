@@ -29,6 +29,7 @@ set updatetime=250
 set viminfo='100,f1
 
 set background=dark                      "make vim use colors that look good on a dark background
+" set background=light                      "make vim use colors that look good on a light background
 
 set showcmd                              "show incomplete cmds down the bottom
 set showmode                             "show current mode down the bottom
@@ -75,15 +76,25 @@ set laststatus=2                         "always show status line
 set backupdir=$HOME/tmp/backup//
 set directory=$HOME/tmp/backup//
 
+set termguicolors
+
+
 " ----------- Visual Configuration ----------------------------------
 try
   " set background=dark
-  " colorscheme gruvbox
-  colorscheme cobalt2
+  colorscheme gruvbox
+
+  " colorscheme mycontrast
+  " colorscheme cobalt2
 catch
   " colorscheme mycontrast
   " Just leave it empty if not found
 endtry
+
+" let g:gruvbox_contrast_light
+" let g:gruvbox_contrast_dark
+" let g:gruvbox_invert_selection=0
+" let g:gruvbox_invert_signs=0
 
 set statusline=%f%m%r%h%w[%l][%{&ff}]%y[%p%%][%04l,%04v][%n]
 "              | | | | |  |   |      |  |     |    |     |
@@ -221,7 +232,7 @@ function! ColorToggle()
   endif
 endfunc
 
-nnoremap <F8> :call ColorToggle()<cr>
+" nnoremap <F8> :call ColorToggle()<cr>
 
 " Uncomment here to later ColorColumn colour
 " highlight ColorColumn ctermbg=magenta
@@ -315,7 +326,8 @@ map <leader>t :NERDTreeFind<cr>
 
 " ----- theme support for vim-airline
 
-let g:airline_theme='behelit'
+" let g:airline_theme='behelit'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_right_alt_sep ='◀ '
