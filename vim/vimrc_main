@@ -16,7 +16,7 @@ syntax on                                "Turn on syntax highlighting
 set encoding=utf-8                       "Force UTF-8 encoding for special characters
 set ruler                                "Turn on the ruler
 set number                               "Show line numbers
-set scrolloff=10                         "Keep 10 lines below cursor always
+set scrolloff=4                         "Keep 4 lines below cursor always
 set cursorline                           "underline the current line in the file
 set cursorcolumn                         "highlight the current column. Visible in GUI mode only.
 " set colorcolumn=80
