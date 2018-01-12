@@ -81,10 +81,9 @@ set termguicolors
 
 " ----------- Visual Configuration ----------------------------------
 try
-  " set background=dark
   colorscheme gruvbox
-
   " colorscheme mycontrast
+
   " colorscheme cobalt2
 catch
   " colorscheme mycontrast
