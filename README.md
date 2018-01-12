@@ -1,5 +1,7 @@
 ## VIM Setup
 
+![run cmd](images/iterm2-screen.gif) 
+
 ### Installing VIM
 
 - brew install vim
@@ -17,8 +19,24 @@
 
 ###  VIM Tutorial
 
-A [custom VIM Tutorial](https://github.com/arcseldon/dotfiles-vim/blob/master/vim/vimtutor.md) has been prepared that references all the standard VIM keyboard bindings, as well as Plugin bindings and custom bindings that this set of VIM dotfiles is configured for. It should be a great follow-up to the doing the standard VIM `vimtutor` and reading the [Practical Vim](https://pragprog.com/book/dnvim2/practical-vim-second-edition) by Drew Neil.  It is the opinion of this author that both serve a great introductory path to mastering VIM.
+A [custom VIM
+Tutorial](https://github.com/arcseldon/dotfiles-vim/blob/master/vim/vimtutor.md)
+has been prepared that references all the standard VIM keyboard bindings, as
+well as Plugin bindings and custom bindings that this set of VIM dotfiles is
+configured for. It should be a great follow-up to the doing the standard VIM
+`vimtutor` and reading the [Practical
+Vim](https://pragprog.com/book/dnvim2/practical-vim-second-edition) by Drew
+Neil.  It is the opinion of this author that both serve a great introductory
+path to mastering VIM.
+
+### Iterm2 Setup 
+
+Am using `gruvbox` color scheme for Iterm2 - [Get Iterm2 & vim files here](https://github.com/morhetz/gruvbox)
 
 
+![run cmd](images/iterm2-colors.gif) 
 
 
+For font settings, I am using `Operator Mono` with medium typeface.
+
+![run cmd](images/iterm2-text.gif) 

@@ -268,6 +268,8 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+" Alchemist (elixir support)
+let g:alchemist_iex_term_size = 15
 
 " RSpec.vim mappings
 map ,.t :call RunCurrentSpecFile()<CR>
@@ -638,6 +640,9 @@ nmap ,.d :NERDTreeFind<CR>
 " toggles between :set paste and :set nopoaste
 " does not appear to work..
 "set pastetoggle=<F2>
+
+" CDC = Change to Directory of Current file
+command CDC cd %:p:h
 
 " Get everything else from vimrc_private
 " very local config or experimental
