@@ -269,7 +269,7 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 " ----------- Plugin Configuration ----------------------------------
 
 " Alchemist (elixir support)
-let g:alchemist_iex_term_size = 15
+let g:alchemist_iex_term_size = 12
 
 " RSpec.vim mappings
 map ,.t :call RunCurrentSpecFile()<CR>
