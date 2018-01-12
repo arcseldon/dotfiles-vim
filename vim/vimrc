@@ -4,8 +4,8 @@ source $VIMHOME/vimrc_main
 
 
 if has('gui_running')
-  source $HOME/.vim/bundle/vim-cobalt2/colors/cobalt2-gui.vim
-  set guifont=Operator\ Mono:h12
+  " source $HOME/.vim/bundle/vim-cobalt2/colors/cobalt2-gui.vim
+  set guifont=Operator\ Mono:h13
 
   highlight Comment gui=italic
   highlight Comment cterm=italic
