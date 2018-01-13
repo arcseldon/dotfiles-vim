@@ -263,6 +263,18 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+" vim-tag
+let g:vim_tags_auto_generate = 1
+
+" gist-vim
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_post_private = 1
+let g:gist_post_anonymous = 0
+let g:gist_use_password_in_gitconfig = 0
+
+
 " gruvbox theme
 let g:gruvbox_bold=1
 let g:gruvbox_undercurl=1
@@ -648,7 +660,7 @@ nmap ,.d :NERDTreeFind<CR>
 "set pastetoggle=<F2>
 
 " CDC = Change to Directory of Current file
-command CDC cd %:p:h
+command! CDC cd %:p:h
 
 " Get everything else from vimrc_private
 " very local config or experimental

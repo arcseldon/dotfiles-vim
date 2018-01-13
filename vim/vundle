@@ -117,6 +117,22 @@ Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 " Bundle 'napcs/my-vim-snippets'
 
+" EXPERIMENTAL
+" auto closes ([ etc"
+Bundle "Raimondi/delimitMate"
+" generates ctags file in root on files saves"
+Bundle "szw/vim-tags"
+"publishes gists automatically :Gist -p
+Bundle "mattn/webapi-vim"
+Bundle "mattn/gist-vim"
+
+"crs (coerce to snake_case)
+"MixedCase (crm)
+"camelCase (crc)
+" snake_case (crs)
+Bundle "tpope/vim-abolish"
+
+
 " Temporarily commenting out this
 " Conflicts with vim-snippets
 " Bundle 'carlosgaldino/elixir-snippets'
