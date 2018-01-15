@@ -263,6 +263,15 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+" EXPERIMENTAL - https://github.com/janko-m/vim-test#setup
+nmap <silent> t<C-n> :TestNearest<CR> " t Ctrl+n
+nmap <silent> t<C-f> :TestFile<CR>    " t Ctrl+f
+nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
+nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
+nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
+
+
 " vim-tag
 let g:vim_tags_auto_generate = 1
 
@@ -587,7 +596,10 @@ let g:formatters_javascript = ['semistandard_javascript']
 " setup custom formatter for elixir - mix format - NOT WORKING
 " raised issue - https://github.com/Chiel92/vim-autoformat/issues/221
 " let g:formatdef_mixformat_ex = '"mix format"'
-" let g:formatters_ex = ['mixformat_ex']
+" let g:formatters_elixir = ['mixformat_ex']
+
+" support for elixir added
+let g:formatters_elixir = ['mix_format']
 
 " ----------- Digraphs -------
 

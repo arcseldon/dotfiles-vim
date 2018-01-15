@@ -1,9 +1,14 @@
-nippet %
+snippet %
 	<% ${0} %>
 snippet =
 	<%= ${0} %>
 snippet end
 	<% end %>
+snippet tinput
+	<%= text_input f, ${1:item}, placeholder: "${2:item}",  class: "${3}" %>
+	${0}
+snippet errortag
+	<%= error_tag f, "${1:item}" %>
 snippet for
 	<%= for ${1:item} <- ${2:items} ${3:@conn} do %>
 		${0}

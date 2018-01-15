@@ -125,6 +125,7 @@ Bundle "szw/vim-tags"
 "publishes gists automatically :Gist -p
 Bundle "mattn/webapi-vim"
 Bundle "mattn/gist-vim"
+Plugin 'janko-m/vim-test'
 
 "crs (coerce to snake_case)
 "MixedCase (crm)
