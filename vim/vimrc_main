@@ -185,6 +185,12 @@ nnoremap <silent> <expr> $ ScreenMovement("$")
 " Pasting remains as Command P on MAC
 vmap <C-c> "+y
 
+" Experimental
+" save file either in
+" normal mode or insert mode
+imap <C-s> <C-o>:w<CR>
+nmap <C-s> :w<CR>
+
 " Navigate tabs
 map <leader>1 :tabp<CR>
 map <leader>2 :tabn<CR>
@@ -512,7 +518,7 @@ function! AutoLintFix()
   set autoread
 endfunc
 
-autocmd FileType javascript nnoremap <Leader>p :call AutoLintFix()<cr>
+autocmd FileType javascript nnoremap <Leader>@ :call AutoLintFix()<cr>
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -590,7 +596,8 @@ let g:autoformat_remove_trailing_spaces = 0
 " let g:autoformat_verbosemode=1
 
 " setup custom formatter for semistandard
-let g:formatdef_semistandard_javascript = '"semistandard --fix --stdin"'
+" let g:formatdef_semistandard_javascript = '"semistandard --fix --stdin"'
+let g:formatdef_semistandard_javascript = '"semistandard --global localStorage --global alert --global auth0js --global $ --global auth0 --fix --stdin"'
 let g:formatters_javascript = ['semistandard_javascript']
 
 " setup custom formatter for elixir - mix format - NOT WORKING
@@ -673,6 +680,26 @@ nmap ,.d :NERDTreeFind<CR>
 
 " CDC = Change to Directory of Current file
 command! CDC cd %:p:h
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RENAME CURRENT FILE (thanks Gary Bernhardt)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <Leader>w :call RenameFile()<cr>
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
+
 
 " Get everything else from vimrc_private
 " very local config or experimental

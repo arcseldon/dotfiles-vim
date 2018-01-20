@@ -6,7 +6,7 @@ snippet fiel
 	field :${1:item}, :${2:string}
 	${0}
 snippet changese
-	def changeset(struct, params \\ %{}) do
+	def changeset(struct, params \\\\ %{}) do
 		struct
 		|> cast(params, [:${1:item}, :${2:item}, :${3:item}])
 		|> validate_required([:${4:item}, :${5:item}, :${6:item}])
@@ -16,4 +16,13 @@ snippet flas
 	|> put_flash(:${1:info}, "${2:Message}")
 snippet redirec
 	redirect(to: ${1:item}_path(conn, :${2:index}))
-
+snippet belongsto
+	belongs_to :${1:item}, ${2:}
+	${0}
+snippet hasmany
+	has_many :${1:item}, ${2:}
+	${0}
+snippet iop IO.puts
+	IO.puts(${0})
+snippet iopd IO.puts
+	IO.puts("++++++")
