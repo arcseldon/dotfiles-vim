@@ -699,13 +699,13 @@ map <Leader>w :call RenameFile()<cr>
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
-" jumps around closing braces etc
-" and puts back into insert mode
-imap <C-a>  la  i
-
 " map for underscore char
 " awkward on Japanese keyboards
-imap <C-d> _
+imap <C-u> _
+
+" jumps around closing braces etc
+" and puts back into insert mode
+imap <C-d>  la  i
 
 " map for getting from insert
 " mode onto new line below
