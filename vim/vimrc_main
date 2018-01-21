@@ -705,7 +705,7 @@ imap <C-a> _
 
 " jumps around closing braces etc
 " and puts back into insert mode
-imap <C-d>  la  i
+imap <C-d>  la i
 
 " map for getting from insert
 " mode onto new line below
