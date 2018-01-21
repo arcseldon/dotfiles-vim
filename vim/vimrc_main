@@ -707,6 +707,11 @@ imap <C-a>  la  i
 " awkward on Japanese keyboards
 imap <C-d> _
 
+" map for getting from insert
+" mode onto new line below
+imap <C-f> A<cr>
+
+
 " Get everything else from vimrc_private
 " very local config or experimental
 try
