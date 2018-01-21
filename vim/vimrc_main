@@ -701,7 +701,7 @@ set list listchars=tab:»·,trail:·
 
 " map for underscore char
 " awkward on Japanese keyboards
-imap <C-u> _
+imap <C-r> _
 
 " jumps around closing braces etc
 " and puts back into insert mode
