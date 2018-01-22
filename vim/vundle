@@ -129,6 +129,7 @@ Bundle "szw/vim-tags"
 Bundle "mattn/webapi-vim"
 Bundle "mattn/gist-vim"
 Plugin 'janko-m/vim-test'
+Bundle 'reinh/vim-makegreen'
 
 "crs (coerce to snake_case)
 "MixedCase (crm)
