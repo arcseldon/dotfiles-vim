@@ -78,6 +78,11 @@ set directory=$HOME/tmp/backup//
 
 set termguicolors
 
+" Experimental
+" can use :checktime or :checkt to reload all buffers
+" if detected changes outside vim to files
+set autoread
+
 
 " ----------- Visual Configuration ----------------------------------
 try
@@ -280,17 +285,12 @@ nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
 nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
 nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
 
+let g:ctrlp_show_hidden=1
+
 " make test commands execute using dispatch.vim
 " let test#strategy = "dispatch"
 " let test#strategy = "neovim"
 let test#strategy = "makegreen"
-
-" to get out of insert mode when
-" results showing to scroll around
-" results window
-if has('nvim')
-  tmap <C-o> <C-\><C-n>
-end
 
 " vim-tag
 let g:vim_tags_auto_generate = 1

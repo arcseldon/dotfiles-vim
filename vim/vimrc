@@ -15,6 +15,10 @@ if has('gui_running')
 endif
 
 " Put neovim specific settings here..
+
+" to get out of insert mode when
+" results showing to scroll around
+" results window
 if has("nvim")
   tnoremap <Esc> <C-\><C-n>
 endif
