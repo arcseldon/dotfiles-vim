@@ -26,3 +26,9 @@ snippet iop IO.puts
 	IO.puts(${0})
 snippet iopd IO.puts
 	IO.puts("++++++")
+snippet ok
+	{:ok,  ${1:}}
+	${0}
+snippet err
+	{:error,  ${1:}}
+	${0}

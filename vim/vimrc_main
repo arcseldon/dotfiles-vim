@@ -725,6 +725,9 @@ imap <C-d>  la i
 " mode onto new line below
 imap <C-f> A<cr>
 
+" map for getting to end of line
+" without leaving insert mode
+inoremap <C-e> <C-o>A
 
 " Get everything else from vimrc_private
 " very local config or experimental
