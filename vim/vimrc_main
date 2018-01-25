@@ -16,7 +16,7 @@ syntax on                                "Turn on syntax highlighting
 set encoding=utf-8                       "Force UTF-8 encoding for special characters
 set ruler                                "Turn on the ruler
 set number                               "Show line numbers
-set scrolloff=4                         "Keep 4 lines below cursor always
+set scrolloff=2                          "Keep 2 lines below cursor always
 set cursorline                           "underline the current line in the file
 set cursorcolumn                         "highlight the current column. Visible in GUI mode only.
 " set colorcolumn=80
@@ -285,8 +285,6 @@ nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
 nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
 nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
 
-let g:ctrlp_show_hidden=1
-
 " make test commands execute using dispatch.vim
 " let test#strategy = "dispatch"
 " let test#strategy = "neovim"
@@ -451,6 +449,8 @@ let g:tagbar_type_ruby = {
 
 " Open fuzzy finder with leader,f
 map <Leader>f :CtrlP<CR>
+
+let g:ctrlp_show_hidden=1
 
 " Fuzzy finder for buffers
 map <Leader>b :CtrlPBuffer<CR>
