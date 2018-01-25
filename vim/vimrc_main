@@ -276,6 +276,22 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+" vim-rooter configuration
+
+" do not change directory (default)
+" let g:rooter_change_directory_for_non_project_files = ''
+let g:rooter_change_directory_for_non_project_files = 1
+" vim-rooter will unset &autochdir if it's set
+" trigger directory change on directories and all files (default)
+let g:rooter_targets = '/,*'
+" specify how to identify a project's root directory
+" see https://github.com/airblade/vim-rooter/issues/30
+" vim-rooter takes each entry of the array in turn and searches
+" upwards for a matching file or directory, stopping when it gets a hit
+let g:rooter_patterns = ['Rakefile', 'Gemfile', 'mix.exs', 'pom.xml', '.git/', '.git', 'package.json']
+" to change directory for the current window only (:lcd)
+let g:rooter_use_lcd = 1
+
 " vim-test
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 " EXPERIMENTAL - https://github.com/janko-m/vim-test#setup
