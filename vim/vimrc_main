@@ -745,6 +745,9 @@ imap <C-f> A<cr>
 " without leaving insert mode
 inoremap <C-e> <C-o>A
 
+" open a file with default app type
+nnoremap gO :!open <cfile><CR>
+
 " Get everything else from vimrc_private
 " very local config or experimental
 try
