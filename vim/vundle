@@ -81,7 +81,8 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'terryma/vim-multiple-cursors'
 
 " Edit quickfix window results
-Bundle 'quickfix-reflector.vim'
+" Bundle 'quickfix-reflector.vim'
+Bundle 'stefandtw/quickfix-reflector.vim'
 
 " Markdown
 " Relies on tabular, which must be loaded first
