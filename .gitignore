@@ -4,3 +4,9 @@ vim/vimrc_private
 vim/vundle_private
 vim/eclim
 vim/plugin
+vim/bundle/alchemist.vim/doc/tags
+vim/bundle/dbext.vim/doc/tags
+vim/bundle/quickfix-reflector.vim/doc/tags
+vim/bundle/vim-mix/doc/tags
+vim/bundle/vim-tags/doc/tags
+vim/bundle/vim-textobj-user/doc/tags
