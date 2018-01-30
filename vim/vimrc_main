@@ -276,6 +276,31 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+" vim-polygot configuration
+
+" exclude elm as using elm-vim plugin instead
+let g:polyglot_disabled = ['elm']
+
+" elm-vim configuration
+
+" install the following:
+" npm install -g elm
+" npm install -g elm-test
+" npm install -g elm-oracle
+" npm install -g elm-format
+
+let g:elm_setup_keybindings = 0
+let g:elm_format_autosave = 1
+
+" let g:elm_jump_to_error = 0
+" let g:elm_make_output_file = "elm.js"
+" let g:elm_make_show_warnings = 0
+" let g:elm_syntastic_show_warnings = 0
+" let g:elm_browser_command = ""
+" let g:elm_detailed_complete = 0
+" let g:elm_format_fail_silently = 0
+
+
 " vim-rooter configuration
 
 " do not change directory (default)
@@ -288,7 +313,7 @@ let g:rooter_targets = '/,*'
 " see https://github.com/airblade/vim-rooter/issues/30
 " vim-rooter takes each entry of the array in turn and searches
 " upwards for a matching file or directory, stopping when it gets a hit
-let g:rooter_patterns = ['Rakefile', 'Gemfile', 'mix.exs', 'pom.xml', '.git/', '.git', 'package.json']
+let g:rooter_patterns = ['Rakefile', 'Gemfile', 'mix.exs', 'pom.xml', 'elm-package.json', '.git/', '.git', 'package.json']
 " to change directory for the current window only (:lcd)
 let g:rooter_use_lcd = 1
 
@@ -529,6 +554,7 @@ let g:syntastic_cucumber_args="--profile syntastic"
 let g:syntastic_javascript_checkers = ['standard']
 let g:syntastic_javascript_standard_exec = 'semistandard'
 let g:syntastic_html_checkers = ['']
+let g:elm_syntastic_show_warnings = 1
 
 " keep some globals quiet
 let g:syntastic_javascript_standard_quiet_messages = { 'regex': ['alert',

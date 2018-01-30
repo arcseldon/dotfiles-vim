@@ -30,6 +30,10 @@ Bundle 'jlanzarotta/bufexplorer'
 " Linting support for many languages (conflicts with syntastic)
 " Bundle 'w0rp/ale'
 
+" Elm
+" Ordering important - must come before polyglot
+Plugin 'elmcast/elm-vim'
+
 " For general programming support
 Bundle 'sheerun/vim-polyglot'
 
