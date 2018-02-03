@@ -276,6 +276,13 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+" vim-exchange
+" Default mappings
+nmap cx <Plug>(Exchange)
+xmap X <Plug>(Exchange)
+nmap cxc <Plug>(ExchangeClear)
+nmap cxx <Plug>(ExchangeLine)
+
 " vim-polygot configuration
 
 " exclude elm as using elm-vim plugin instead

@@ -37,6 +37,9 @@ Plugin 'elmcast/elm-vim'
 " For general programming support
 Bundle 'sheerun/vim-polyglot'
 
+" For exchanging two items
+Bundle 'tommcdo/vim-exchange'
+
 " JSX (React) Support
 "requires 'pangloss/vim-javascript' - in vim-polyglot
 " Plugin 'mxw/vim-jsx'
