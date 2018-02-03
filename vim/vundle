@@ -95,6 +95,11 @@ Bundle 'stefandtw/quickfix-reflector.vim'
 " Relies on tabular, which must be loaded first
 Bundle 'plasticboy/vim-markdown'
 
+" Tmux related
+" Bundle 'benmills/vimux'
+" Bundle 'jgdavey/vim-turbux'
+" Bundle 'christoomey/vim-tmux-navigator'
+
 " launch build processes and other things in splits or tmux.
 Bundle 'tpope/vim-dispatch'
 

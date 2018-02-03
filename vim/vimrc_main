@@ -189,14 +189,42 @@ nnoremap <silent> <expr> $ ScreenMovement("$")
 
 
 " Supports copying (yanking) to system clipboard in the terminal
+" https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
+" function! WrapForTmux(s)
+  " if !exists('$TMUX')
+    " return a:s
+  " endif
+"
+  " let tmux_start = "\<Esc>Ptmux;"
+  " let tmux_end = "\<Esc>\\"
+"
+  " return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+" endfunction
+"
+" let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+" let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+"
+" function! XTermPasteBegin()
+  " set pastetoggle=<Esc>[201~
+  " set paste
+  " return ""
+" endfunction
+"
+" inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" pastetoggle just in case
+set pastetoggle=<F2><Paste>
+
+
 " Pasting remains as Command P on MAC
 vmap <C-c> "+y
 
 " Experimental
 " save file either in
 " normal mode or insert mode
-imap <C-s> <C-o>:w<CR>
-nmap <C-s> :w<CR>
+" May mess with tmux settings..
+" imap <C-s> <C-o>:w<CR>
+" nmap <C-s> :w<CR>
 
 " Navigate tabs
 map <leader>1 :tabp<CR>
@@ -323,6 +351,23 @@ let g:rooter_targets = '/,*'
 let g:rooter_patterns = ['Rakefile', 'Gemfile', 'mix.exs', 'pom.xml', 'elm-package.json', '.git/', '.git', 'package.json']
 " to change directory for the current window only (:lcd)
 let g:rooter_use_lcd = 1
+
+" ---- vimux configs
+
+" let VimuxHeight = "33" "this is percentage
+
+" Inspect runner pane
+" map <Leader>vi :VimuxInspectRunner<CR>
+
+" Close vim tmux runner opened by RunVimTmuxCommand
+" map <Leader>vq :VimuxCloseRunner<CR>
+
+" If text is selected, save it in the v buffer and send that buffer it to tmux
+" vmap <Leader>vs "vy :call VimuxRunCommand(@v . "\n", 0)<CR>
+
+" Select current paragraph and send it to tmux
+" nmap <Leader>vs vip<LocalLeader>vs<CR>
+
 
 " vim-test
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
