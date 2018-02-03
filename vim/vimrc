@@ -21,5 +21,12 @@ endif
 " results window
 if has("nvim")
   tnoremap <Esc> <C-\><C-n>
+  " so we can use escape in terminal
+  tnoremap <leader>[ <Esc>
+  " Windows navigation for terminal
+  tnoremap <C-h> <C-\><C-n><C-w>h
+  tnoremap <C-j> <C-\><C-n><C-w>j
+  tnoremap <C-k> <C-\><C-n><C-w>k
+  tnoremap <C-l> <C-\><C-n><C-w>l
 endif
 

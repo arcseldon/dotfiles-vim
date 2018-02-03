@@ -4,6 +4,7 @@ vim/vimrc_private
 vim/vundle_private
 vim/eclim
 vim/plugin
+vim/swap/*
 vim/bundle/alchemist.vim/doc/tags
 vim/bundle/dbext.vim/doc/tags
 vim/bundle/quickfix-reflector.vim/doc/tags
