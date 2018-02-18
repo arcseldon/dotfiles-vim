@@ -17,6 +17,10 @@
 - ln -nfs ~/bin/dotfiles/vim .vim
 - vim +PluginInstall +qall   (alternatively launch vim and run :PluginInstall)
 
+### TMUX (Optional)
+
+ln -nfs ~/bin/dotfiles/tmux.conf .tmux.conf
+
 ###  VIM Tutorial
 
 A [custom VIM

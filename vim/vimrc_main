@@ -280,10 +280,11 @@ nmap <leader>msp :mkspell! ~/.vim/spell/en.utf-8.add<CR><CR>
 
 
 " Map windows navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+" christoomey/vim-tmux-navigator plugin will set this up
+" map <C-h> <C-w>h
+" map <C-j> <C-w>j
+" map <C-k> <C-w>k
+" map <C-l> <C-w>l
 
 
 " vsearch.vim
@@ -440,11 +441,11 @@ let g:EasyMotion_do_mapping = 1 " Enable default mappings
 " Open NERDTree with [,d]
 map <Leader>d :NERDTreeToggle<CR>
 
-if has("gui_running")
+" if has("gui_running")
   " echo "yes, we have a GUI"
-else
-  autocmd VimEnter * NERDTree
-endif
+" else
+  " autocmd VimEnter * NERDTree
+" endif
 
 
 let NERDTreeShowLineNumbers=1
