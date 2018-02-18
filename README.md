@@ -21,6 +21,15 @@
 
 ln -nfs ~/bin/dotfiles/tmux.conf .tmux.conf
 
+### Installs
+
+$ brew install git
+$ brew install vim
+$ brew install tmux
+$ brew install ctags
+$ brew install ack
+$ brew install reattach-to-user-namespace
+
 ###  VIM Tutorial
 
 A [custom VIM
