@@ -83,6 +83,9 @@ set termguicolors
 " if detected changes outside vim to files
 set autoread
 
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
 
 " ----------- Visual Configuration ----------------------------------
 try
@@ -725,7 +728,11 @@ silent! dig -. 8230 "U+2026=… HORIZONTAL ELLIPSIS
 
 " The following has graduated to vimrc_main
 
-nnoremap <silent> <leader>- :NERDTreeClose<bar>bufdo bd!<CR>
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
+nnoremap <silent> <leader>^ :NERDTreeClose<bar>bufdo bd!<CR>
 
 " Map ,i to run mix test
 " nnoremap <Leader>i :!mix test<CR>
