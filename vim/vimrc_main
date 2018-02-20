@@ -356,21 +356,15 @@ let g:rooter_patterns = ['Rakefile', 'Gemfile', 'mix.exs', 'pom.xml', 'elm-packa
 " to change directory for the current window only (:lcd)
 let g:rooter_use_lcd = 1
 
-" ---- vimux configs
-
-" let VimuxHeight = "33" "this is percentage
-
-" Inspect runner pane
-" map <Leader>vi :VimuxInspectRunner<CR>
-
-" Close vim tmux runner opened by RunVimTmuxCommand
-" map <Leader>vq :VimuxCloseRunner<CR>
-
-" If text is selected, save it in the v buffer and send that buffer it to tmux
-" vmap <Leader>vs "vy :call VimuxRunCommand(@v . "\n", 0)<CR>
-
-" Select current paragraph and send it to tmux
-" nmap <Leader>vs vip<LocalLeader>vs<CR>
+" ---- vim-tmux-runner configs
+map <leader>vc :VtrSendCommandToRunner<cr>
+map <leader>vl :VtrSendLinesToRunner<cr>
+map <leader>vo :VtrOpenRunner<cr>
+map <leader>vk :VtrKillRunner<cr>
+map <leader>vf :VtrFocusRunner<cr>
+map <leader>vd :VtrDetachRunner<cr>
+map <leader>va :VtrAttachToPane<cr>
+map <leader>vr :VtrReattachRunner<cr>
 
 
 " vim-test
