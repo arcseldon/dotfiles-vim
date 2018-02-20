@@ -366,6 +366,7 @@ map <leader>vd :VtrDetachRunner<cr>
 map <leader>va :VtrAttachToPane<cr>
 map <leader>vr :VtrReattachRunner<cr>
 
+nnoremap <leader>vx :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'iex'}<cr>
 
 " vim-test
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
