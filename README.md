@@ -14,6 +14,7 @@
 - git clone https://github.com/VundleVim/Vundle.vim.git ~/bin/dotfiles/vim/bundle/Vundle.vim
 - cd ~
 - ln -nfs ~/bin/dotfiles/vim/vimrc .vimrc
+- ln -nfs ~/bin/dotfiles/agignore .agignore
 - ln -nfs ~/bin/dotfiles/vim .vim
 - vim +PluginInstall +qall   (alternatively launch vim and run :PluginInstall)
 
@@ -28,6 +29,7 @@ ln -nfs ~/bin/dotfiles/tmux.conf .tmux.conf
     $ brew install tmux
     $ brew install ctags
     $ brew install ack
+    $ brew install ag
     $ brew install reattach-to-user-namespace
 
 ###  VIM Tutorial

@@ -1,0 +1,13 @@
+.git/
+.hg/
+.svn/
+.exe
+.so
+.dat
+tags
+/target
+/bower_components/
+/log
+/node_modules/
+/tmp
+/vendor
