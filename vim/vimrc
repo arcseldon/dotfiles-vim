@@ -22,6 +22,9 @@ endif
 if has("nvim")
   " use interactive search & replace
   set inccommand=split
+  " ensure in terminal mode that the location of the cursor is visible
+  hi! TermCursorNC ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE gui=NONE
+  " map escape key for exiting terminal mode
   tnoremap <Esc> <C-\><C-n>
   " so we can use escape in terminal
   tnoremap <leader>[ <Esc>
