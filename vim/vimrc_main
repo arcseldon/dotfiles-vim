@@ -226,8 +226,8 @@ vmap <C-c> "+y
 " save file either in
 " normal mode or insert mode
 " May mess with tmux settings..
-" imap <C-s> <C-o>:w<CR>
-" nmap <C-s> :w<CR>
+imap <C-s> <C-o>:w<CR>
+nmap <C-s> :w<CR>
 
 " Navigate tabs
 map <leader>1 :tabp<CR>
