@@ -48,6 +48,8 @@ Bundle 'tommcdo/vim-exchange'
 Bundle 'tpope/vim-projectionist'
 Bundle 'arcseldon/vim-projectionist-elixir'
 
+" Highlight yank regions
+Bundle 'machakann/vim-highlightedyank'
 
 " Fuzzy finder
 Bundle 'kien/ctrlp.vim'

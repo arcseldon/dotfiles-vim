@@ -20,6 +20,8 @@ endif
 " results showing to scroll around
 " results window
 if has("nvim")
+  " use interactive search & replace
+  set inccommand=split
   tnoremap <Esc> <C-\><C-n>
   " so we can use escape in terminal
   tnoremap <leader>[ <Esc>
