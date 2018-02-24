@@ -816,6 +816,10 @@ map <Leader>w :call RenameFile()<cr>
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
+" Copies a paragraph (eg. function) underneath existing one
+" put into f register for ease of access
+let @f = '}i{j^yis}p'
+
 " map for underscore char
 " awkward on Japanese keyboards
 imap <C-a> _
