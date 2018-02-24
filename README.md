@@ -30,6 +30,7 @@ ln -nfs ~/bin/dotfiles/tmux.conf .tmux.conf
     $ brew install ctags
     $ brew install ack
     $ brew install ag
+    $ brew install fzf 
     $ brew install reattach-to-user-namespace
 
 ###  VIM Tutorial
