@@ -1,9 +1,18 @@
 ## TMUX Tutorial 
 
+### Resources
+
+- https://github.com/tmux/tmux
+- https://pragprog.com/book/bhtmux/tmux
+- https://thoughtbot.com/upcase/videos/tmux-introduction
+
+Other conversations:
+
+- https://news.ycombinator.com/item?id=11283955
+
 ### Background
 
-- Open source, available on github:
-  - https://github.com/tmux/tmux
+- Open source, available on github
 - Terminal Multiplexer (TMUX predecessor was GNU Screen)
 - Multiple virtual terminal sessions
 - wraps around existing shell process
@@ -27,17 +36,6 @@
 - Primary usecase (myself) is for local application development to accompany VIM usage
 - Spend vast majority of day in terminal and 100% of that time in TMUX
 - Workflow / time efficiency - productive mouse-free development
-
-### Resources
-
-DEMO: Vim, split right IEX, split bottom man page for tmux
-
-- https://pragprog.com/book/bhtmux/tmux
-- https://thoughtbot.com/upcase/videos/tmux-introduction
-
-Other conversations:
-
-- https://news.ycombinator.com/item?id=11283955
 
 ### How To Get Help
 
@@ -154,6 +152,7 @@ Other conversations:
 - Compare VIM and TMUX Navigation (plugin support)
 - Resize panes with VIM open
 - Send commands from VIM to TMUX
+- DEMO: Vim, split right IEX, split bottom man page for tmux
 
 ##### Demo Notes
 
