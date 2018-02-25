@@ -154,6 +154,8 @@ Other conversations:
 - Send commands from VIM to TMUX
 - DEMO: Vim, split right IEX, split bottom man page for tmux
 
+leader vf and c-\
+
 ##### Demo Notes
 
 - In vim 2 vert splits and right side horizontal split
