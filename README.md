@@ -33,25 +33,18 @@ ln -nfs ~/bin/dotfiles/tmux.conf .tmux.conf
     $ brew install fzf 
     $ brew install reattach-to-user-namespace
 
-###  VIM Tutorial
+### Tutorials
 
-A [custom VIM
-Tutorial](https://github.com/arcseldon/dotfiles-vim/blob/master/vim/vimtutor.md)
-has been prepared that references all the standard VIM keyboard bindings, as
-well as Plugin bindings and custom bindings that this set of VIM dotfiles is
-configured for. It should be a great follow-up to the doing the standard VIM
-`vimtutor` and reading the [Practical
-Vim](https://pragprog.com/book/dnvim2/practical-vim-second-edition) by Drew
-Neil.  It is the opinion of this author that both serve a great introductory
-path to mastering VIM.
+The `tuts` folder contains my “show notes” from presentations where I have discussed both VIM and TMUX.
+
+- [VIM Tutorial](https://github.com/arcseldon/dotfiles-vim/blob/master/tuts/vimtutor.md)
+- [TMUX Tutorial](https://github.com/arcseldon/dotfiles-vim/blob/master/tuts/tmux.md)
 
 ### Iterm2 Setup 
 
 Am using `gruvbox` color scheme for Iterm2 - [Get Iterm2 & vim files here](https://github.com/morhetz/gruvbox)
 
-
 ![run cmd](images/iterm2-colors.gif) 
-
 
 For font settings, I am using `Operator Mono` with medium typeface.
 
