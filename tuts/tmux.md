@@ -21,7 +21,7 @@ Other conversations:
 - Another is the fact that it spawns a session that can run persistently in the background and which you can connect to from anywhere. 
 - You can also disconnect, let it sit there for a week, come back and it'll still be there exactly as you left it.
 
-### Hipster IDE setup using OS X + tmux + vim 
+### Hipster IDE setup using OS X + tmux + vim + iterm2
 
 - I use tmux as my primary "IDE", 
 - Often quoted “indispensable being able to connect to my tmux session from any computer anywhere” - that doesn’t apply to me ... yet..

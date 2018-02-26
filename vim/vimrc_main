@@ -308,6 +308,16 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+
+" godlygeek/tabular mappings
+" Experimental 180226
+if exists(":Tabularize")
+  nmap <Leader>y= :Tabularize /=<CR>
+  vmap <Leader>y= :Tabularize /=<CR>
+  nmap <Leader>y: :Tabularize /:\zs<CR>
+  vmap <Leader>y: :Tabularize /:\zs<CR>
+endif
+
 " vim-exchange
 " Default mappings
 nmap cx <Plug>(Exchange)
