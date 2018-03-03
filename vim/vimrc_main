@@ -246,6 +246,13 @@ nnoremap <leader>O mzO<esc>`z
 " insert blank line below in Normal mode
 nnoremap <leader>o mzo<esc>`z
 
+" Experimental
+" pipe operator for elixir
+let @p = 'i|>'
+
+" puts padding around current paragraph
+let @o = ' ,O,o'
+
 " Sort CSS properties alphabetically
 nnoremap <leader>css :g#\({\n\)\@<=#.,/}/sort<cr>
 
@@ -834,9 +841,9 @@ let @f = '}i{j^yis}p'
 " awkward on Japanese keyboards
 imap <C-a> _
 
-" jumps around closing braces etc
-" and puts back into insert mode
-imap <C-d>  la i
+" jumps around one char in insert mode
+" eg. closing brace or bracket
+imap <C-d>  la
 
 " map for getting from insert
 " mode onto new line below
