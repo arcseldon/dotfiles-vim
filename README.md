@@ -1,6 +1,6 @@
 ## VIM Setup
 
-![run cmd](images/iterm2-screen2.gif) 
+![run cmd](images/tmux-vim-iterm2.gif) 
 
 ### Installing VIM
 
