@@ -1,5 +1,6 @@
 vim/.DS_Store
 vim/.netrwhist
+zshrc_private
 vim/vimrc_private
 vim/vundle_private
 vim/eclim
