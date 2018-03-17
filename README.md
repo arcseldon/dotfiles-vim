@@ -13,11 +13,22 @@
 - mkdir -p dotfiles/vim/bundle
 - git clone https://github.com/VundleVim/Vundle.vim.git ~/bin/dotfiles/vim/bundle/Vundle.vim
 - cd ~
-- ln -nfs ~/bin/dotfiles/zshrc .zshrc
 - ln -nfs ~/bin/dotfiles/vim/vimrc .vimrc
 - ln -nfs ~/bin/dotfiles/agignore .agignore
 - ln -nfs ~/bin/dotfiles/vim .vim
 - vim +PluginInstall +qall   (alternatively launch vim and run :PluginInstall)
+
+### ZSH (Optional)
+
+Includes scripts for auto-loading tmux on shell startup
+
+Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) using [manual install](https://github.com/robbyrussell/oh-my-zsh#manual-installation)
+
+```
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+```
+
+- ln -nfs ~/bin/dotfiles/zshrc .zshrc
 
 ### TMUX (Optional)
 

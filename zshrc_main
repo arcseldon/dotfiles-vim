@@ -87,12 +87,4 @@ ensure_tmux_is_running() {
 
 ensure_tmux_is_running
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-# [[ -f /Users/arcseldon/.nvm/versions/node/v8.3.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/arcseldon/.nvm/versions/node/v8.3.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-# [[ -f /Users/arcseldon/.nvm/versions/node/v8.3.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/arcseldon/.nvm/versions/node/v8.3.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
-# function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 # source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
