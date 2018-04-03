@@ -177,6 +177,11 @@ leader vf and c-\
 - echo "Hello, world"
 - and leader vl
 
+
+use ,va to select runner
+use ,vf to focus runner onto runner pane (expanding it to take full screen size)
+use ctrl-a ;   to zoom back out and flip back to the original pane before the focus runner command
+
 #### Arbitrary Application Execution
 
 - Run arbitrary apps - eg. htop, irb, iex
