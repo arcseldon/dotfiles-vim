@@ -95,7 +95,7 @@ Bundle 'stefandtw/quickfix-reflector.vim'
 
 " Markdown
 " Relies on tabular, which must be loaded first
-Bundle 'plasticboy/vim-markdown'
+" Bundle 'plasticboy/vim-markdown'
 
 " Tmux related
 " Bundle 'benmills/vimux'
@@ -213,8 +213,11 @@ Plugin 'reedes/vim-textobj-quote'
 " Unicode
 Plugin 'chrisbra/unicode.vim'
 
+" markdown and mermaid support
+Plugin 'kannokanno/previm'
+
 " vimwiki
-Plugin 'vimwiki/vimwiki'
+" Plugin 'vimwiki/vimwiki'
 
 try
   source $VIMHOME/vundle_private

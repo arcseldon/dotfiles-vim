@@ -315,6 +315,19 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+" tpope/vim-markdown - installed by default
+let g:markdown_syntax_conceal = 0
+
+" previm
+
+" opens the preview in web browser
+map <Leader>y :PrevimOpen<CR>
+
+let g:previm_open_cmd = 'open -a Safari'
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
 
 " godlygeek/tabular mappings
 " Experimental 180226
