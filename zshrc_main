@@ -60,7 +60,7 @@ ZSH_THEME="avit"
 
 # plugins=(git npm osx vagrant node bower brew extract z mvn docker docker-machine zsh-syntax-highlighting)
 
-plugins=(git npm osx node bower mvn brew zsh-syntax-highlighting)
+plugins=(git npm osx node bower mvn brew docker docker-compose docker-machine zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
