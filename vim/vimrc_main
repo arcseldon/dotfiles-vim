@@ -703,6 +703,7 @@ endif
 autocmd FileType ruby nmap <Leader>g :!"$CLEAR_COMMAND"; ruby "%"<cr>
 autocmd FileType go  nmap <Leader>g :!"$CLEAR_COMMAND"; go run "%"<cr>
 autocmd filetype java nmap <Leader>g :!"$CLEAR_COMMAND"; javac "%" && java "%:r"<cr>
+autocmd filetype cs nmap <Leader>g :!"$CLEAR_COMMAND"; cd %:p:h; dotnet run<cr>
 
 if has('win32') || has ('win64')
   autocmd FileType html  nmap <Leader>g :silent ! start firefox "%"<cr>
