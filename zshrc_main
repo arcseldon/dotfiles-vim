@@ -7,6 +7,8 @@ export KEYTIMEOUT=1
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 
+bindkey -v
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # ZSH_THEME="robbyrussell"

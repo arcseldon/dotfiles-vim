@@ -17,6 +17,9 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rake'
 Bundle 'thoughtbot/vim-rspec'
 
+" Docker syntax highlighting
+Plugin 'ekalinin/Dockerfile.vim'
+
 " jade syntax highlighting
 Bundle 'digitaltoad/vim-pug'
 
