@@ -137,6 +137,8 @@ autocmd FileType css setlocal foldmethod=indent shiftwidth=2 tabstop=2
 autocmd FileType html setlocal foldmethod=manual shiftwidth=2 tabstop=2
 set foldlevelstart=20                    "start level 20 should result in folds open by default
 
+" add html syntax to dotnet razor files
+autocmd BufNewFile,BufRead *.cshtml set syntax=html
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
