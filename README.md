@@ -13,6 +13,7 @@
 - mkdir -p dotfiles/vim/bundle
 - git clone https://github.com/VundleVim/Vundle.vim.git ~/bin/dotfiles/vim/bundle/Vundle.vim
 - cd ~
+  ln -nfs ~/bin/dotfiles/ctags .ctags
 - ln -nfs ~/bin/dotfiles/vim/vimrc .vimrc
 - ln -nfs ~/bin/dotfiles/agignore .agignore
 - ln -nfs ~/bin/dotfiles/vim .vim
