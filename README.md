@@ -15,6 +15,7 @@
 - cd ~
   ln -nfs ~/bin/dotfiles/ctags .ctags
 - ln -nfs ~/bin/dotfiles/vim/vimrc .vimrc
+- ln -nfs ~/bin/dotfiles/iex.exs .iex.exs
 - ln -nfs ~/bin/dotfiles/agignore .agignore
 - ln -nfs ~/bin/dotfiles/vim .vim
 - vim +PluginInstall +qall   (alternatively launch vim and run :PluginInstall)

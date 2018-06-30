@@ -754,6 +754,11 @@ let g:formatters_javascript = ['semistandard_javascript']
 " support for elixir added
 let g:formatters_elixir = ['mix_format']
 
+" support for python - requires pip dependency
+" pip install --upgrade autopep8
+let g:formatters_python = ['autopep8']
+
+
 " ----------- Digraphs -------
 
 silent! dig -. 8230 "U+2026=… HORIZONTAL ELLIPSIS
