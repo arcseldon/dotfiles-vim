@@ -323,7 +323,7 @@ let g:markdown_syntax_conceal = 0
 " previm
 
 " opens the preview in web browser
-map <Leader>y :PrevimOpen<CR>
+" map <Leader>y :PrevimOpen<CR>
 
 let g:previm_open_cmd = 'open -a Safari'
 augroup PrevimSettings
@@ -757,6 +757,9 @@ let g:formatters_elixir = ['mix_format']
 " support for python - requires pip dependency
 " pip install --upgrade autopep8
 let g:formatters_python = ['autopep8']
+
+" gem install rubocop
+let g:formatters_ruby = ['rubocop']
 
 
 " ----------- Digraphs -------
