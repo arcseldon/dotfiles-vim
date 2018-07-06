@@ -317,6 +317,12 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+" Experimental
+" sudo find / -iname 'neovim-ruby-host*'
+" Required for ruby autocompletion support with C-x C-o
+" Update the path / version as required - here, using rbenv
+let g:ruby_host_prog = '~/.rbenv/versions/2.5.1/bin/neovim-ruby-host'
+
 " tpope/vim-markdown - installed by default
 let g:markdown_syntax_conceal = 0
 
@@ -696,16 +702,17 @@ autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd BufRead,BufNewFile *.eex set ft=eex.html
 
 " ----------- Launch configs ---------------------------------------
-if has('win32') || has ('win64')
-  let $CLEAR_COMMAND="cls"
-else
-  let $CLEAR_COMMAND="clear"
-endif
+" if has('win32') || has ('win64')
+  " let $CLEAR_COMMAND="cls"
+" else
+  " let $CLEAR_COMMAND="clear"
+" endif
+" autocmd FileType ruby nmap <Leader>g :!"$CLEAR_COMMAND"; ruby "%"<cr>
 
-autocmd FileType ruby nmap <Leader>g :!"$CLEAR_COMMAND"; ruby "%"<cr>
-autocmd FileType go  nmap <Leader>g :!"$CLEAR_COMMAND"; go run "%"<cr>
-autocmd filetype java nmap <Leader>g :!"$CLEAR_COMMAND"; javac "%" && java "%:r"<cr>
-autocmd filetype cs nmap <Leader>g :!"$CLEAR_COMMAND"; cd %:p:h; dotnet run<cr>
+autocmd FileType ruby nmap <Leader>g :!ruby "%"<cr>
+autocmd FileType go  nmap <Leader>g :!go run "%"<cr>
+autocmd filetype java nmap <Leader>g :!javac "%" && java "%:r"<cr>
+autocmd filetype cs nmap <Leader>g :!cd %:p:h; dotnet run<cr>
 
 if has('win32') || has ('win64')
   autocmd FileType html  nmap <Leader>g :silent ! start firefox "%"<cr>
@@ -715,15 +722,15 @@ endif
 
 " appears not to work with "standard" js linter for syntastic
 " autocmd FileType javascript  nmap <Leader>g :!"$CLEAR_COMMAND"; node "%"<cr>
-autocmd FileType coffee  nmap <Leader>g :!"$CLEAR_COMMAND"; coffee "%"<cr>
+autocmd FileType coffee  nmap <Leader>g :!coffee "%"<cr>
 autocmd FileType markdown  nmap <Leader>g :!mark "%"<cr><cr>
-autocmd FileType groovy  nmap <Leader>g :!"$CLEAR_COMMAND"; groovy "%"<cr>
-autocmd FileType sh  nmap <Leader>g :!"$CLEAR_COMMAND"; sh "%"<cr>
-autocmd FileType python  nmap <Leader>g :!"$CLEAR_COMMAND"; python3 "%"<cr>
-autocmd FileType elixir  nmap <Leader>g :!"$CLEAR_COMMAND"; elixir "%"<cr>
-autocmd FileType elm nmap <Leader>g :!"$CLEAR_COMMAND"; elm make "%" --output "%:t:r.html" && open "%:t:r.html"<cr><cr>
+autocmd FileType groovy  nmap <Leader>g :!groovy "%"<cr>
+autocmd FileType sh  nmap <Leader>g :!sh "%"<cr>
+autocmd FileType python  nmap <Leader>g :!python3 "%"<cr>
+autocmd FileType elixir  nmap <Leader>g :!elixir "%"<cr>
+autocmd FileType elm nmap <Leader>g :!elm make "%" --output "%:t:r.html" && open "%:t:r.html"<cr><cr>
 " Elixir tests should run mix
-autocmd BufEnter *_test.exs nmap <Leader>g :!"$CLEAR_COMMAND"; mix test<cr>
+autocmd BufEnter *_test.exs nmap <Leader>g :!mix test<cr>
 
 
 " ----------- Autoformat -------
