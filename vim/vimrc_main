@@ -406,12 +406,17 @@ map <leader>vr :VtrReattachRunner<cr>
 
 nnoremap <leader>vx :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'iex'}<cr>
 
+" Required for python to handle indentation
+let g:VtrStripLeadingWhitespace = 0
+let g:VtrClearEmptyLines = 0
+let g:VtrAppendNewline = 1
+
 " vim-test
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 " EXPERIMENTAL - https://github.com/janko-m/vim-test#setup
 nmap <silent> t<C-n> :TestNearest<CR> " t Ctrl+n
 nmap <silent> t<C-f> :TestFile<CR>    " t Ctrl+f
-nmap <silent> t<C-s> :TestSuite<CR>   " t Ctrl+s
+nmap <silent> ,<C-s> :TestSuite<CR>   " , Ctrl+s
 nmap <silent> t<C-l> :TestLast<CR>    " t Ctrl+l
 nmap <silent> t<C-g> :TestVisit<CR>   " t Ctrl+g
 
@@ -867,10 +872,6 @@ set list listchars=tab:»·,trail:·
 " Copies a paragraph (eg. function) underneath existing one
 " put into f register for ease of access
 let @f = '}i{j^yis}p'
-
-" map for underscore char
-" awkward on Japanese keyboards
-imap <C-a> _
 
 " jumps around one char in insert mode
 " eg. closing brace or bracket

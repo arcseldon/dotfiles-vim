@@ -9,6 +9,8 @@ autoload -U edit-command-line
 
 bindkey -v
 
+set -o ignoreeof
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # ZSH_THEME="robbyrussell"
