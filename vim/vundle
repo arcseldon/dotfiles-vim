@@ -121,6 +121,9 @@ Bundle 'airblade/vim-rooter'
 " npm install -g eslint
 Bundle 'Chiel92/vim-autoformat'
 
+" Experimental usage of black for python formatting
+" Plugin 'ambv/black'
+
 " My custom color scheme
 Bundle 'arcseldon/vim-cobalt2'
 Bundle 'arcseldon/vim-mycontrast'
@@ -221,6 +224,10 @@ Plugin 'kannokanno/previm'
 
 " vimwiki
 " Plugin 'vimwiki/vimwiki'
+
+" Experimental
+" also use pip install jedi
+Plugin 'davidhalter/jedi-vim'
 
 try
   source $VIMHOME/vundle_private

@@ -133,6 +133,7 @@ autocmd FileType javascript setlocal foldmethod=syntax
 autocmd FileType elixir setlocal foldmethod=syntax
 autocmd FileType ruby setlocal foldmethod=syntax
 autocmd FileType css setlocal foldmethod=indent shiftwidth=2 tabstop=2
+autocmd FileType python setlocal foldmethod=indent shiftwidth=4 tabstop=4
 " autocmd FileType html setlocal foldmethod=syntax shiftwidth=2 tabstop=2
 autocmd FileType html setlocal foldmethod=manual shiftwidth=2 tabstop=2
 set foldlevelstart=20                    "start level 20 should result in folds open by default
@@ -316,6 +317,17 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 
 " ----------- Plugin Configuration ----------------------------------
+
+" Experimental - jedi-vim
+
+let g:jedi#goto_command = "<leader>jd"
+let g:jedi#goto_assignments_command = "<leader>jg"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>jn"
+let g:jedi#completions_command = "<Shift-Space>"
+let g:jedi#rename_command = "<leader>jr"
+
 
 " Experimental
 " sudo find / -iname 'neovim-ruby-host*'
@@ -769,6 +781,12 @@ let g:formatters_elixir = ['mix_format']
 " support for python - requires pip dependency
 " pip install --upgrade autopep8
 let g:formatters_python = ['autopep8']
+
+" let g:formatters_python = ['black']
+
+" let g:formatters_python = ['yapf']
+" let g:formatter_yapf_style = 'pep8'
+" let g:formatter_yapf_style = 'google'
 
 " gem install rubocop
 let g:formatters_ruby = ['rubocop']
