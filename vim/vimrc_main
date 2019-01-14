@@ -814,6 +814,9 @@ autocmd FileType elixir  nmap <Leader>i :!"$CLEAR_COMMAND"; mix test "%"<cr>
 " current support elixir
 autocmd FileType elixir  nmap <Leader>p :!"$CLEAR_COMMAND"; mix format "%"<cr>
 
+" Map ,i to run pytest
+autocmd FileType python nmap <Leader>i :!"$CLEAR_COMMAND"; pytest "%"<cr>
+
 " brew install jq
 " format json
 autocmd FileType json nmap <Leader>j :%!jq '.'<cr>
