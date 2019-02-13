@@ -693,9 +693,20 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
+" let g:syntastic_auto_loc_list = 0
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" use autoformat for basic formatting with astyle installed
+
+" use checkstyle for more advanced java checks
+let g:syntastic_java_checkers = ['checkstyle']
+let g:syntastic_java_checkstyle_classpath = '~/bin/dotfiles/vim/java/checkstyle/checkstyle-8.17-all.jar'
+let g:syntastic_java_checkstyle_conf_file = '~/bin/dotfiles/vim/java/checkstyle/checkstyle.xml'
+
+
+nnoremap <Leader>k :SyntasticCheck<CR>
 
 " ----------- Dispatch configs ---------------------------------------
 
@@ -766,8 +777,12 @@ let g:autoformat_remove_trailing_spaces = 0
 " let g:autoformat_verbosemode=1
 
 " setup custom formatter for semistandard
-" let g:formatdef_semistandard_javascript = '"semistandard --fix --stdin"'
-let g:formatdef_semistandard_javascript = '"semistandard --global localStorage --global alert --global auth0js --global $ --global auth0 --fix --stdin"'
+let g:formatdef_semistandard_javascript = '"semistandard --fix --stdin"'
+
+" let g:formatdef_semistandard_javascript = '"semistandard --global localStorage --global alert --global describe --global $ --global test --global expect --fix --stdin"'
+
+let g:syntastic_javascript_standard_args = "--global $ --global it --global describe --global test --global expect"
+
 let g:formatters_javascript = ['semistandard_javascript']
 
 " setup custom formatter for elixir - mix format - NOT WORKING
@@ -850,7 +865,7 @@ nnoremap <silent> <C-w>o :ZoomToggle<CR>
 nnoremap <space> za
 vnoremap <space> zf
 
-" execute node for javascrip type
+" execute node for javascript type
 autocmd FileType javascript  nmap <Leader>g :!"$CLEAR_COMMAND"; node "%"<cr>
 
 " Search and replace for word under cursor

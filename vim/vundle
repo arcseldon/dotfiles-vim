@@ -119,6 +119,7 @@ Bundle 'airblade/vim-rooter'
 " For JavaScript uses:
 " npm install -g js-beautify
 " npm install -g eslint
+" brew install astyle (for java)
 Bundle 'Chiel92/vim-autoformat'
 
 " Experimental usage of black for python formatting
