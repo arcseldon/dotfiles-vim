@@ -795,6 +795,7 @@ let g:formatters_elixir = ['mix_format']
 
 " support for python - requires pip dependency
 " pip install --upgrade autopep8
+let g:formatdef_autopep8 = "'autopep8 - --range '.a:firstline.' '.a:lastline"
 let g:formatters_python = ['autopep8']
 
 " let g:formatters_python = ['black']
