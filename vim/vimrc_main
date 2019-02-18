@@ -677,7 +677,7 @@ let g:syntastic_javascript_standard_quiet_messages = { 'regex': ['alert',
 
 " automatically run semistandard fix and load changes to file into buffer
 " keep some globals quiet
-function! AutoLintFix()
+function! JSAutoLintFix()
   :silent !semistandard --global localStorage
       \ --global alert
       \ --global auth0js
@@ -686,7 +686,7 @@ function! AutoLintFix()
   set autoread
 endfunc
 
-autocmd FileType javascript nnoremap <Leader>@ :call AutoLintFix()<cr>
+autocmd FileType javascript nnoremap <Leader>@ :call JSAutoLintFix()<cr>
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -705,8 +705,22 @@ let g:syntastic_java_checkers = ['checkstyle']
 let g:syntastic_java_checkstyle_classpath = '~/bin/dotfiles/vim/java/checkstyle/checkstyle-8.17-all.jar'
 let g:syntastic_java_checkstyle_conf_file = '~/bin/dotfiles/vim/java/checkstyle/checkstyle.xml'
 
+" python syntastic checkers
+" use :SyntasticInfo for more info
+" pip install autopep8
+" pip install pylint
+let g:syntastic_python_checkers = ['pep8', 'pylint']
+
+" automatically run autopep8 to fix and load changes to file into buffer
+function! PythonAutoLintFix()
+  :silent !autopep8 -i %
+  set autoread
+endfunc
+
+autocmd FileType python nnoremap <Leader>@ :call PythonAutoLintFix()<cr>
 
 nnoremap <Leader>k :SyntasticCheck<CR>
+
 
 " ----------- Dispatch configs ---------------------------------------
 
@@ -799,7 +813,6 @@ let g:formatdef_autopep8 = "'autopep8 - --range '.a:firstline.' '.a:lastline"
 let g:formatters_python = ['autopep8']
 
 " let g:formatters_python = ['black']
-
 " let g:formatters_python = ['yapf']
 " let g:formatter_yapf_style = 'pep8'
 " let g:formatter_yapf_style = 'google'
@@ -887,6 +900,11 @@ nmap ,.d :NERDTreeFind<CR>
 
 " CDC = Change to Directory of Current file
 command! CDC cd %:p:h
+
+
+" Automatically add debug statements for breakpoints in python using pdb
+" au FileType python map <silent> <leader>u oimport pdb; pdb.set_trace()<esc>
+let @d = 'oimport pdb; pdb.set_trace()k0:w'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
