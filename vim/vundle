@@ -230,6 +230,11 @@ Plugin 'kannokanno/previm'
 " also use pip install jedi
 Plugin 'davidhalter/jedi-vim'
 
+" Experimental
+" jinja2 template syntax support
+Plugin 'Glench/Vim-Jinja2-Syntax'
+
+
 try
   source $VIMHOME/vundle_private
 catch

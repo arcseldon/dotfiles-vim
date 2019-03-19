@@ -62,7 +62,7 @@ ZSH_THEME="avit"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git npm vi-mode osx node bower mvn brew docker docker-compose docker-machine zsh-syntax-highlighting)
+plugins=(git npm vi-mode osx node bower thefuck mvn brew docker docker-compose docker-machine zsh-syntax-highlighting django dotenv pip)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,6 +77,9 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 export PATH=~/bin/dotfiles/bin:$PATH
+
+# auto-correct last command
+eval $(thefuck --alias)
 
 # Setup tmux session by default
 _not_inside_tmux() { [[ -z "$TMUX" ]] }

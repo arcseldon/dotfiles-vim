@@ -318,6 +318,10 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 " ----------- Plugin Configuration ----------------------------------
 
+" switch off eclim javascript validation
+let g:EclimJavascriptValidate = 0
+
+
 " Experimental - jedi-vim
 
 let g:jedi#goto_command = "<leader>jd"
@@ -499,6 +503,13 @@ map <Leader>d :NERDTreeToggle<CR>
 " else
   " autocmd VimEnter * NERDTree
 " endif
+"
+
+" Experimental - try using silver searcher
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 
 
 let NERDTreeShowLineNumbers=1
